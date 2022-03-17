@@ -32,7 +32,10 @@ def main():
     if 'NOSTEAM' in os.environ:
         util.replace_command('-issteam', '')
     if 'XL_WINEONLINUX' in os.environ:
-        util.protontricks('dotnet48')
+        try:
+            util.install_dotnet('dotnet48')
+        except NameError:
+            util.protontricks_proton_5('dotnet48')
         util.protontricks('vcrun2019')
         util.replace_command('-issteam', '')
         launcherpath = os.path.join(util.protonprefix(), 'drive_c/users/steamuser/AppData/Local/XIVLauncher/XIVLauncher.exe')
