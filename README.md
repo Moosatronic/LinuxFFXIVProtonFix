@@ -10,7 +10,7 @@ Commands:
 
 - git clone https://github.com/Moosatronic/LinuxFFXIVProtonFix.git
 - cd LinuxFFXIVProtonFix
-- chmod +x Lmooseffxivfix.sh
+- chmod +x mooseffxivfix.sh
 - ./mooseffxivfix.sh
 
 
