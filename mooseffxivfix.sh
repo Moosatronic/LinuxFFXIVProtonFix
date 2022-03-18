@@ -1,12 +1,20 @@
 #!/bin/bash
 read -p "This is a script that will attempt to install xivlauncher into Steam. Please note that using this script is at your own peril. Press ENTER to continue"
 while true; do
+	read -p "Are you a non-steam FFXIV account owner who would like to launch XIVLauncher from the FFXIV Free Trial? [y/n]" yn
+	case $yn in
+        [Yy]* )FFXIVSTEAMID=312060; break;;
+        [Nn]* )FFXIVSTEAMID=39210; break;;
+        * ) echo "Please answer yes or no.";;
+	esac
+done
+
+while true; do
     read -p "Is your steam install and FFXIV install both located at the default location at $HOME/.steam/steam? [y/n]" yn
     case $yn in
         [Yy]* )STEAMLOCATION="$HOME/.steam/steam" &&\
 STEAMLIBRARY="$HOME/.steam/steam/steamapps" &&\
 STEAMPROTONLOCATION="$STEAMLOCATION/compatibilitytools.d" &&\
-FFXIVSTEAMID=39210 &&\ 
 FFXIVPREFIXLOCATION="$STEAMLIBRARY/compatdata/$FFXIVSTEAMID"; break;;
         [Nn]* ) read -p "Your steam install and FFXIV must both be located at the default location. Press Enter to Exit" && exit;;
         * ) echo "Please answer yes or no.";;
@@ -37,16 +45,20 @@ fi
 read -p "installing Centzilius's ProtonFix to Proton-6.21-GE-2, press ENTER to continue"
 cd $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/ && { curl -O https://gist.githubusercontent.com/Centzilius/57892e5d1aaea51b3f389e6f1d587c97/raw/d9941cf64dff28dcbfe1855113e2a10f162bbbd0/39210.py; cd -; }
 
+if [ $FFXIVSTEAMID == "312060" ]; then
+	mv $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/39210.py $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/312060.py 
+fi
+
 
 # OLD PREFIX
 # Checks if a FFXIV prefix already exists, asks if you want to delete your old prefix, and does so.
 read -p "Checking if prefix for Final Fantasy XIV exists. Press Enter to Continue."
 if [ -d "$FFXIVPREFIXLOCATION" ]; then
 	while true; do
-    	read -p "A FFXIV prefix already exists at $FFXIVPREFIXLOCATION, would you like to delete your old prefix before continuing PLEASE NOTE: this will delete any existing FFXIV config files you have in your prefix, backup all files at $FFXIVPREFIXLOCATION [y/n]?" yn
+    	read -p "A FFXIV prefix already exists at $FFXIVPREFIXLOCATION, would you like to delete your old prefix? PLEASE NOTE: this will delete any existing FFXIV config files you have in your prefix, backup all files at $FFXIVPREFIXLOCATION [y/n]?" yn
     	case $yn in
         	[Yy]* ) rm -rf $FFXIVPREFIXLOCATION; break;;
-        	[Nn]* ) read -p "You must delete your prefix to continue, this script will now close";;
+        	[Nn]* ) read -p "You must delete your prefix to continue, this script will now close"; exit ;;
         	* ) echo "Please answer yes or no.";;
     	esac
 	done
