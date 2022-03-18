@@ -8,7 +8,7 @@ STEAMLIBRARY="$HOME/.steam/steam/steamapps" &&\
 STEAMPROTONLOCATION="$STEAMLOCATION/compatibilitytools.d" &&\
 FFXIVSTEAMID=39210 &&\ 
 FFXIVPREFIXLOCATION="$STEAMLIBRARY/compatdata/$FFXIVSTEAMID"; break;;
-        [Nn]* ) read -p "this script will now exit. Press Enter to Exit" && exit;;
+        [Nn]* ) read -p "Your steam install and FFXIV must both be located at the default location. Press Enter to Exit" && exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -40,10 +40,10 @@ cd $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/ && { curl -O htt
 
 # OLD PREFIX
 # Checks if a FFXIV prefix already exists, asks if you want to delete your old prefix, and does so.
-read -p "Checking if prefix for Final Fantasy XIV already exists. Press Enter to Continue."
+read -p "Checking if prefix for Final Fantasy XIV exists. Press Enter to Continue."
 if [ -d "$FFXIVPREFIXLOCATION" ]; then
 	while true; do
-    	read -p "A FFXIV prefix already exists at $FFXIVPREFIXLOCATION, would you like to delete your old prefix before continuing?" yn
+    	read -p "A FFXIV prefix already exists at $FFXIVPREFIXLOCATION, would you like to delete your old prefix before continuing PLEASE NOTE: this will delete any existing FFXIV config files you have in your prefix, backup all files at $FFXIVPREFIXLOCATION [y/n]?" yn
     	case $yn in
         	[Yy]* ) rm -rf $FFXIVPREFIXLOCATION; break;;
         	[Nn]* ) read -p "You must delete your prefix to continue, this script will now close";;
@@ -51,13 +51,13 @@ if [ -d "$FFXIVPREFIXLOCATION" ]; then
     	esac
 	done
 else
-	read -p "Great! You do not have an old prefix in your steam library, press ENTER to continue"
+	read -p "Great! The script detected that you do not have an old prefix in your steam library, press ENTER to continue"
 fi
 		 
 ## CREATE PREFIX ##
 # Checks if you have created a new prefix before continuing
 read -p "please create a new prefix by right clicking on Final Fantasy XIV in your steam library, clicking on compatibility, and ensuring  the use of Proton 6.3-8. Start the game and close it after a few seconds. Upon completion, press ENTER."
-if [ -d "$STEAMLIBRARY/compatdata/39210" ] ; then
+if [ -d "$STEAMLIBRARY/compatdata/$FFXIVSTEAMID" ] ; then
 	echo "Prefix Detected" 
 	if grep -q "6.3-3" "$FFXIVPREFIXLOCATION/version"; then
   		read -p "Proton 6.3-8 is detected as the current proton used for FFXIV, a new prefix was likely created. Press ENTER to Continue" 
@@ -68,7 +68,7 @@ else
 fi
 
 read -p "please switch FFXIV's proton version to Proton-6.21-GE-2. Upon completion, press ENTER."
-if [ -d "$STEAMLIBRARY/compatdata/39210" ] ; then
+if [ -d "$STEAMLIBRARY/compatdata/$FFXIVSTEAMID" ] ; then
 	echo "Prefix Detected" 
 	if grep -q "6.21-GE-1" "$FFXIVPREFIXLOCATION/version"; then
   		read -p "Proton 6.21-GE-1 is the current proton used for FFXIV, please ensure that you have entered \" XL_WINEONLINUX=True DSSENH=n %command%\" as the launch option for Final Fantasy XIV, after having done so, upon launching the game you may get an error message. Press no and xivlauncher should launch, if it does not launch, and you are done, CONGRATULATIONS and enjoy Final Fantasy XIV. If the game does not launch then most likely a new prefix was not created or some other error occurred during installation. Press Enter to exit" 
