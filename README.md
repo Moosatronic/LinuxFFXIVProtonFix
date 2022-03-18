@@ -24,6 +24,6 @@ Steam
 
 # What this script downloads
 
-- Proton-GE-21-2
+- Proton-6.21-GE-2
 - Cent's FFXIV protonfix 
 
