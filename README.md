@@ -13,5 +13,17 @@ Commands:
 - chmod +x mooseffxivfix.sh
 - ./mooseffxivfix.sh
 
+# What does this script do?
 
+It installs Cent's game fix at https://gist.github.com/Centzilius/57892e5d1aaea51b3f389e6f1d587c97 as well as all of its dependencies to either FFXIV or FFXIV's free trial on Steam so that you can run XIVLauncher from Steam. This fix is necessary for Steam FFXIV account players to play FFXIV on Linux.
+
+# Dependencies
+
+Curl
+Steam
+
+# What this script downloads
+
+- Proton-GE-21-2
+- Cent's FFXIV protonfix 
 
