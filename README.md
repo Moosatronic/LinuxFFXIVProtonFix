@@ -1,5 +1,5 @@
-# Moose's LinuxFFXIVProtonFix CURRENTLY WIP
-A script designed to install XIVLauncher and run it on Steam. 
+# FFXIV Bash Script to install Centzilius's FFXIV Proton Fix CURRENTLY WIP
+A script designed to install XIVLauncher and run it on Steam on linux. 
 
 This script also has support for non-steam account holders who want to launch XIVLauncher from the FFXIV Free Trial page on Steam
 
@@ -21,6 +21,7 @@ It installs Cent's game fix at https://gist.github.com/Centzilius/57892e5d1aaea5
 
 Curl
 Steam
+Proton 5
 
 # What this script downloads
 
