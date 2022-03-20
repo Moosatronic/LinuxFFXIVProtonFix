@@ -31,3 +31,4 @@ Steam
 
 - have script check for compatibilitytools.d
 - remote Proton 5 download
+- improve documentation
