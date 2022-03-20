@@ -43,12 +43,9 @@ else
 fi
 
 read -p "installing Centzilius's ProtonFix to Proton-6.21-GE-2, press ENTER to continue"
-cd $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/ && { curl -O https://gist.githubusercontent.com/Centzilius/57892e5d1aaea51b3f389e6f1d587c97/raw/d9941cf64dff28dcbfe1855113e2a10f162bbbd0/39210.py; cd -; }
-
-if [ $FFXIVSTEAMID == "312060" ]; then
-	mv $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/39210.py $STEAMPROTONLOCATION/Proton-6.21-GE-2/protonfixes/gamefixes/312060.py 
-fi
-
+cp 39210.py "$STEAMPROTONLOCATION"/Proton-6.21-GE-2/protonfixes/gamefixes/39210.py
+# Also replace the gamefixes script for the free trial.
+cp "$STEAMPROTONLOCATION"/Proton-6.21-GE-2/protonfixes/gamefixes/{39210,312060}.py
 
 # OLD PREFIX
 # Checks if a FFXIV prefix already exists, asks if you want to delete your old prefix, and does so.
