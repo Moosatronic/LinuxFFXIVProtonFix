@@ -27,3 +27,7 @@ Steam
 - Proton-6.21-GE-2
 - Cent's FFXIV protonfix 
 
+# TO DO
+
+- have script check for compatibilitytools.d
+- remote Proton 5 download
