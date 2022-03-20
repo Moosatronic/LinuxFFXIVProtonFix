@@ -12,8 +12,8 @@ Commands:
 
 - git clone https://github.com/Moosatronic/LinuxFFXIVProtonFix.git
 - cd LinuxFFXIVProtonFix
-- chmod +x mooseffxivfix.sh
-- ./mooseffxivfix.sh
+- chmod +x ffxivfix.sh
+- ./ffxivfix.sh
 
 # What does this script do?
 
