@@ -6,6 +6,8 @@ This script also has support for non-steam account holders who want to launch XI
 # NOTE: This script deletes your FFXIV prefix, please ensure you have backed up your config files before allowing the script to delete your prefix
 
 # Instructions
+
+
 Commands:
 
 - git clone https://github.com/Moosatronic/LinuxFFXIVProtonFix.git
@@ -19,9 +21,10 @@ It installs Cent's game fix at https://gist.github.com/Centzilius/57892e5d1aaea5
 
 # Dependencies
 
-Curl
-Steam
-Proton 5
+- Git
+- Curl
+- Steam
+- Proton 5
 
 # What this script downloads
 
