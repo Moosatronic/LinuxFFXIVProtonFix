@@ -49,9 +49,9 @@ if [ -z "$STEAMLIBRARY" ]; then printf "No installation candidate found, exiting
 # What is the location of your steam FFXIV install?
 if [ -z "$proton5" ]
     then
-        read -p " Proton 5.0 is required to continue but not installed in your steam library, would you like to install it? [y/n]" yn
+        read -p "Proton 5.0 is required to continue but not installed in your steam library, would you like to install it? [y/n]" yn
             case $yn in
-	        [Yy]* ) $(steam "steam://install/1245040"); # If this returns anything but 0, something went wrong.
+	        [Yy]* ) xdg-open "steam://install/1245040" & > /dev/null 2>&1; sleep 1;
                         read -p "Please install to the default Steam library and press ENTER to continue once complete.";;
 		[Nn]* ) read -p "Proton 5.0 is required to continue, exiting."; exit 1;;
 	    esac
