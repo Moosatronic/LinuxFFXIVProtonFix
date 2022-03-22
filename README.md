@@ -15,13 +15,7 @@ Commands:
 - chmod +x ffxivfix.sh
 - ./ffxivfix.sh
 
-## Troubleshooting
 
-Currently the script may run into an error if compatibilitytools.d, a folder that usually exists in your steam install isnt present. This can be resolved by simply making the folder in your steam install and running the script again.
-
-It is unclear if this script can be run on a Steam Deck without turning off read only mode. 
-
-If you are able to launch XIVLauncher, any further issues running FFXIV can be troubleshooted at [FFXIVLauncher's support page](https://goatcorp.github.io/faq/xl_troubleshooting.html). 
 
 # What does this script do?
 
@@ -34,6 +28,32 @@ It installs Centzilius's game fix located in this repository as well as all of i
 - Steam
 - Proton 5 (installed in steam)
 - Proton-6.21-GE-2
+
+
+# Troubleshooting
+
+## Compatibilitytools.d
+Currently the script may run into an error if compatibilitytools.d, a folder that usually exists in your steam install isnt present. This can be resolved by simply making the folder in your steam install and running the script again.
+
+## Steam Deck
+It is unclear if this script can be run on a Steam Deck without turning off read only mode. If you have a Steam Deck and you can run this script and start XIVLauncher without turning read only mode then please leave a comment saying same in this repository.
+
+## "I get a write free space error when trying to get XIVLauncher to download FFXIV Launcher"
+
+If you get a long error that has some section stating "Util.GetDIskFreeSpace" then you may find success by setting a different FFXIV install directory, particularly one outside of your virtual wine "C://" drive.
+
+![](https://i.imgur.com/cOSre5H.png)
+
+![](https://i.imgur.com/nXvwk7I.png)
+
+
+
+
+
+
+If you are able to launch XIVLauncher, any further issues running FFXIV can be troubleshooted at [FFXIVLauncher's support page](https://goatcorp.github.io/faq/xl_troubleshooting.html). 
+
+
 
 # Credits
 
