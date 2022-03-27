@@ -34,7 +34,7 @@ def main():
     if 'XL_WINEONLINUX' in os.environ:
         try:
             util.install_dotnet('dotnet48')
-        except NameError:
+        except AttributeError:
             util.protontricks_proton_5('dotnet48')
         util.protontricks('vcrun2019')
         util.replace_command('-issteam', '')
