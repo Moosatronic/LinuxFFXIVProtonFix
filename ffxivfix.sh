@@ -110,7 +110,7 @@ read -p "please switch FFXIV's proton version to Proton-6.21-GE-2. Upon completi
 if [ -d "$STEAMLIBRARY/compatdata/$FFXIVSTEAMID" ] ; then
 	echo "Prefix Detected"
 	if grep -q "6.21-GE-1" "$FFXIVPREFIXLOCATION/version"; then
-  		read -p "Proton 6.21-GE-1 is the current proton used for FFXIV, please ensure that you have entered \" XL_WINEONLINUX=True DSSENH=n %command%\" as the launch option for Final Fantasy XIV, after having done so, upon launching the game you may get an error message. Press no and xivlauncher should launch, if it does not launch, and you are done, CONGRATULATIONS and enjoy Final Fantasy XIV. If the game does not launch then most likely a new prefix was not created or some other error occurred during installation. Press Enter to exit"
+  		read -p "Proton 6.21-GE-1 is the current proton used for FFXIV, please ensure that you have entered \"XL_NO_SPACE_REQUIREMENTS=true XL_WINEONLINUX=True DSSENH=n %command%\" as the launch option for Final Fantasy XIV, after having done so, upon launching the game you may get an error message. Press no and xivlauncher should launch, if it does not launch, and you are done, CONGRATULATIONS and enjoy Final Fantasy XIV. If the game does not launch then most likely a new prefix was not created or some other error occurred during installation. Press Enter to exit"
 	else echo "ERROR: Proton 6.21-GE-1 is not the current proton version in your prefix, please ensure that you have switched your current proton version to Proton 6.21-GE-1. Press Enter to Exit."
 	fi
 else

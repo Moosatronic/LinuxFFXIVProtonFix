@@ -41,11 +41,7 @@ Currently it is our understanding that this script works on the Steam Deck, howe
 
 ## "I get a write free space error when trying to get XIVLauncher to download FFXIV"
 
-If you get a long error that has some section stating "Util.GetDIskFreeSpace" then you may find success by setting a different FFXIV install directory, particularly one outside of your virtual wine "C://" drive.
-
-![](https://i.imgur.com/cOSre5H.png)
-
-![](https://i.imgur.com/nXvwk7I.png)
+Please add `XL_NO_SPACE_REQUIREMENTS=true` to your launcher arguments in Steam to disable XIVLauncher's disk space checks. <br>**NOTE:**You will be responsible for ensuring you have enough space on your own. 
 
 
 
