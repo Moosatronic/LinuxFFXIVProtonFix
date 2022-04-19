@@ -9,12 +9,12 @@ This script also has support for non-steam account holders who want to launch XI
 
 
 Commands:
-
-- git clone https://github.com/Moosatronic/LinuxFFXIVProtonFix.git
-- cd LinuxFFXIVProtonFix
-- chmod +x ffxivfix.sh
-- ./ffxivfix.sh
-
+```
+git clone https://github.com/Moosatronic/LinuxFFXIVProtonFix.git
+cd LinuxFFXIVProtonFix
+chmod +x ffxivfix.sh
+./ffxivfix.sh
+```
 
 
 # What does this script do?
