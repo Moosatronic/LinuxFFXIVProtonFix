@@ -34,7 +34,7 @@ for checkDir in "${steamDirs[@]}"; do
             read -p "Is this correct? [y/n]" yn
                 case $yn in
                     [Yy]* ) STEAMLIBRARY="${checkDir}/steamapps"
-                            FFXIVPREFIXLOCATION="${checkDir}/compatdata/$FFXIVSTEAMID"; break;;
+                            FFXIVPREFIXLOCATION="${checkDir}/steamapps/compatdata/$FFXIVSTEAMID"; break;;
                     [Nn]* ) printf "\n";;
                     * ) echo "Please answer yes or no.";;
             esac
