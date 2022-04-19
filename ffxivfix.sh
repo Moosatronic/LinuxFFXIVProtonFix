@@ -106,7 +106,7 @@ else
 	read -p "ERROR: A prefix has not been created. Press Enter to Exit"
 fi
 
-read -p "please switch FFXIV's proton version to Proton-6.21-GE-2. Upon completion, press ENTER."
+read -p "please switch FFXIV's proton version to Proton-6.21-GE-2. Start the game and close it after a few seconds. Upon completion, press ENTER."
 if [ -d "$STEAMLIBRARY/compatdata/$FFXIVSTEAMID" ] ; then
 	echo "Prefix Detected"
 	if grep -q "6.21-GE-1" "$FFXIVPREFIXLOCATION/version"; then
